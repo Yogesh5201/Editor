@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="tablogo.png" type="image/x-icon">
+    <title>Live Code Editor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+        .background-clip {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2em;
+        }
+
+        .contact-us {
+            background-color: #fff;
+            padding: 2em;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            border-color: #aaa;
+        }
+
+        input[type="submit"] {
+            background-color: #77dd77;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+           
+        }
+
+        input[type="submit"]:hover {
+            background-color: #4CAF50;
+        }
+
+        footer {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+            clear: both;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            
+        }
+        nav {
+    max-width: 60vw;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+}
+
+nav img {
+    width: 150px;
+    position: relative;
+    z-index: 10;
+}
+
+nav button {
+    position: relative;
+    z-index: 10;
+}
+.btn {
+    padding: 3px 8px;
+    font-weight: 400;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-red {
+    background-color: red;
+    color: white;
+    padding: 3px 24px;
+    font-size: 20px;
+    border-radius: 4px;
+    font-weight: 400;
+}
+
+.btn-red-sm {
+    background-color: red;
+    color: white;
+}
+
+        
+        
+    </style>
+</head>
+<body>
+    <nav>
+        <span>
+            <img width="53" src="logo final.png">
+        </span>
+        <div>
+           
+            <a href="index.html"><button class="btn btn-red-sm">Home</button></a>
+            <a href="login.html"><button class="btn btn-red-sm">Sign In</button></a>
+            <a href="price.html"><button class="btn btn-red-sm">Try Pro</button></a>
+        </div>
+    </nav>
+    <div class="container"></div>
+    <video autoplay loop muted plays-inline class="background-clip">
+        <source src="bg video.mp4" type="video/mp4">
+    </video>
+    </div>
+    <main>
+        <section class="contact-us">
+            <h1>Contact Us</h1>
+            <p>Get in touch with us for any queries or feedback.</p>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name"><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email"><br><br>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message"></textarea><br><br>
+                <input type="submit" value="Send">
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

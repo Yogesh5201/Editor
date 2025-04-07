@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="tablogo.png" type="image/x-icon">
+    <title>FAQ - Live Code Editor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #121212, #1e1e1e);
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #2c2c2c, #333);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        h1 {
+            color: #ff4081;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 8px rgba(255, 64, 129, 0.6);
+        }
+
+        .faq-section {
+            border-top: 1px solid #555;
+        }
+
+        .faq-section h2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.2em;
+            color: #ff4081;
+            cursor: pointer;
+            margin: 0;
+            padding: 15px;
+            transition: background-color 0.3s, color 0.3s;
+            border-bottom: 1px solid #444;
+            border-radius: 4px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+        }
+
+        .faq-section h2:hover {
+            background-color: #444;
+            color: #fff;
+        }
+
+        .faq-section p {
+            margin: 0;
+            padding: 0 15px 15px 15px;
+            display: none;
+            color: #bbb;
+            line-height: 1.6;
+        }
+
+        .faq-section.open p {
+            display: block;
+        }
+
+        .icon {
+            font-size: 1.3em;
+            transition: transform 0.2s;
+        }
+
+        .faq-section.open .icon {
+            transform: rotate(45deg);
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff4081, #e70050);
+            color: #fff;
+            padding: 10px 25px;
+            border-radius: 5px;
+            text-align: center;
+            margin: 30px auto 0;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background 0.3s;
+            display: block;
+            max-width: 200px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .contact-btn:hover {
+            background: linear-gradient(135deg, #e70050, #ff4081);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .faq-section h2 {
+                font-size: 1.1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .faq-section h2 {
+                font-size: 1em;
+            }
+
+            .contact-btn {
+                padding: 8px 20px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>FAQ - Live Code Editor</h1>
+
+        <div class="faq-section" onclick="toggleFAQ(this)">
+            <h2>What is the Live Code Editor?
+                <span class="icon">+</span>
+            </h2>
+            <p>The Live Code Editor is a real-time code editor designed for coding, learning, and collaboration. It
+                allows users to write, edit, and view code changes instantly within a browser.</p>
+        </div>
+
+        <div class="faq-section" onclick="toggleFAQ(this)">
+            <h2>What languages are supported?
+                <span class="icon">+</span>
+            </h2>
+            <p>Our editor supports popular programming languages, including HTML, CSS, JavaScript, and more. Additional
+                languages can be added as we continue to develop the platform.</p>
+        </div>
+
+        <div class="faq-section" onclick="toggleFAQ(this)">
+            <h2>How can I save my work?
+                <span class="icon">+</span>
+            </h2>
+            <p>Currently, you can download your code directly. We are working on integrating cloud storage options for
+                saving your projects online in the future.</p>
+        </div>
+
+        <div class="faq-section" onclick="toggleFAQ(this)">
+            <h2>Is the Live Code Editor free?
+                <span class="icon">+</span>
+            </h2>
+            <p>Yes, the Live Code Editor is free to use. In the future, we may offer premium features as part of a paid
+                plan.</p>
+        </div>
+
+        <div class="faq-section" onclick="toggleFAQ(this)">
+            <h2>Can I share my code with others?
+                <span class="icon">+</span>
+            </h2>
+            <p>Yes! You can share a link to your code to collaborate with others in real-time.</p>
+        </div>
+
+        <div class="faq-section" onclick="toggleFAQ(this)">
+            <h2>How do I report a bug or suggest a feature?
+                <span class="icon">+</span>
+            </h2>
+            <p>We welcome your feedback! Please contact us at [Your Contact Information] to report any issues or suggest
+                new features.</p>
+        </div>
+
+        <a href="contact.html" class="contact-btn">Contact Us</a>
+    </div>
+    <div id="google_translate_element"></div>
+
+    <script>
+        
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+        function toggleFAQ(faq) {
+            faq.classList.toggle("open");
+        }
+    </script>
+</body>
+
+</html>

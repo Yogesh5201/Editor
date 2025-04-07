@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="tablogo.png" type="image/x-icon">
+    <title>Live Code Editor</title>
+   <style>
+    body{
+        background-color: black;
+    }
+ 
+   .pricing-table {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.background-clip{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.pricing-plan {
+    background-color: #f7f7f7;
+    padding: 20px;
+    margin: 20px;
+    width: calc(33.33% - 40px);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    position: relative; /* added this to make the ribbon absolute positioning work */
+}
+
+.pricing-plan:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.pricing-plan h2 {
+    font-weight: bold;
+    margin-top: 0;
+}
+
+.pricing-plan p {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.pricing-plan ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pricing-plan li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.pricing-plan li:last-child {
+    border-bottom: none;
+}
+
+.pricing-plan button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.pricing-plan button:hover {
+    background-color: #3e8e41;
+}
+
+.recommended {
+    border: 2px solid #4CAF50;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.recommended-ribbon {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    position: absolute;
+    top: -10px; /* adjusted the top position to make it fit inside the box */
+    right: 10px;
+    border-radius: 10px;
+}
+
+.ribbon {
+    background-color: #666;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border-radius: 10px;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+    .pricing-plan {
+        width: calc(50% - 40px);
+    }
+}
+
+@media (max-width: 768px) {
+    .pricing-plan {
+        width: calc(50% - 40px);
+    }
+}
+
+@media (max-width: 480px) {
+    .pricing-plan {
+        width: 100%;
+    }
+}</style>
+</head>
+<body>
+    <div class="container">
+        <video autoplay loop muted plays-inline class="background-clip">
+            <source src="bg video.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="pricing-table">
+        <div class="pricing-plan">
+            <h2>Basic</h2>
+            <p>$9.99/mo</p>
+            <ul>
+                <li>3 Platforms</li>
+                <li>10 Users</li>
+                <li>Basic Support</li>
+            </ul>
+            <a href="payment.html"><button>Sign Up</button></a>
+            <div class="ribbon">Popular</div>
+        </div>
+        <div class="pricing-plan recommended">
+            <h2>Premium</h2>
+            <p>$19.99/mo</p>
+            <ul>
+                <li>7 Platforms</li>
+                <li>50 Users</li>
+                <li>Premium Support</li>
+            </ul>
+            <a href="payment.html"><button>Sign Up</button></a>
+            <div class="ribbon recommended-ribbon">Recommended</div>
+        </div>
+        <div class="pricing-plan">
+            <h2>Enterprise</h2>
+            <p>$49.99/mo</p>
+            <ul>
+                <li>All Platforms</li>
+                <li>100 Users</li>
+                <li>Enterprise Support</li>
+            </ul>
+            <a href="payment.html"><button>Sign Up</button></a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="tablogo.png" type="image/x-icon">
+    <title>Live Code Editor</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-image: url(https://preview.redd.it/u60bjq1e55771.jpg?auto=webp&s=42a8dfe16ee5aedbd7b27bb1a698753159e98b6a);
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 0 20px;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .form-container {
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            padding: 30px;
+            border-radius: 15px;
+            background-color: rgba(255, 255, 255, 0.2);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .form input {
+            width: 100%;
+            height: 45px;
+            border-radius: 25px;
+            background-color: rgba(255, 255, 255, 0.3);
+            padding-left: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            font-weight: bold;
+            color: #ffffff;
+            font-size: 16px;
+            margin-bottom: 15px;
+            transition: border-color 0.3s;
+        }
+
+        .form input:focus {
+            border-color: #ffffff;
+            outline: none;
+        }
+
+        .form button {
+            width: 100%;
+            height: 45px;
+            border-radius: 25px;
+            background-color: #ffffff;
+            color: black;
+            font-weight: bold;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .form button:hover {
+            background-color: #f0f0f0;
+        }
+
+        .form p {
+            color: #ffffff;
+            font-size: 14px;
+            margin: 10px 0;
+        }
+
+        .form a {
+            color: #ffcc00;
+            text-decoration: none;
+            transition: color 0.3s;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        }
+
+        .form a:hover {
+            color: #ff9900;
+        }
+
+        #error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+            display: none;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 700px) {
+            h1 {
+                font-size: 20px;
+            }
+
+            .form input {
+                font-size: 14px;
+            }
+
+            .form button {
+                font-size: 16px;
+            }
+
+            .form p,
+            #error-message {
+                font-size: 12px;
+            }
+        }
+        nav {
+    max-width: 60vw;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+}
+
+nav img {
+    width: 150px;
+    position: relative;
+    z-index: 10;
+}
+
+nav button {
+    position: relative;
+    z-index: 10;
+}
+.btn {
+    padding: 3px 8px;
+    font-weight: 400;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-red {
+    background-color: red;
+    color: white;
+    padding: 3px 24px;
+    font-size: 20px;
+    border-radius: 4px;
+    font-weight: 400;
+}
+
+.btn-red-sm {
+    background-color: red;
+    color: white;
+}
+    </style>
+</head>
+
+<body>
+
+    <div class="form-container">
+            <nav>
+        <span>
+            <img width="53" src="logo final.png">
+        </span>
+        <div>
+           
+            <a href="index.html"><button class="btn btn-red-sm">Home</button></a>
+            <a href="login.html"><button class="btn btn-red-sm">Sign In</button></a>
+            <a href="price.html"><button class="btn btn-red-sm">Try Pro</button></a>
+        </div>
+    </nav>
+        <form onsubmit="return validateForm(event)" class="form">
+            <h1>Login</h1>
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <p><a href="#">Forgot password?</a></p>
+            <button type="submit">Login</button>
+            <p>New to compiler? <a href="#">Sign up</a></p>
+            <p>This site is protected by reCAPTCHA Enterprise and the Google Privacy Policy and Terms of Service apply.</p>
+            <p id="error-message">Invalid username or password</p>
+        </form>
+    </div>
+
+    <script>
+        function validateForm(event) {
+            event.preventDefault(); // Prevent form from submitting by default
+
+            // Define the valid usernames and passwords
+            const users = [
+                { username: "yk2135961@gmail.com", password: "yogeshkumar" },
+                { username: "priyanshu1809@gmail.com", password: "pri@2006" }
+            ];
+
+            // Get input values
+            const usernameInput = document.getElementById("username").value;
+            const passwordInput = document.getElementById("password").value;
+            const errorMessage = document.getElementById("error-message");
+
+            // Check if the input matches any user credentials
+            const isValidUser = users.some(user => user.username === usernameInput && user.password === passwordInput);
+
+            if (isValidUser) {
+                // Credentials are valid; redirect to code.html
+                errorMessage.style.display = "none";
+                window.location.href = "code.html";
+            } else {
+                // Show error message if credentials are incorrect
+                errorMessage.style.display = "block";
+            }
+        }
+    </script>
+</body>
+
+</html>
